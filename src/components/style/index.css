@@ -1,3 +1,5 @@
+/* preact-cli styles */
+
 html, body {
 	height: 100%;
 	width: 100%;
@@ -18,3 +20,44 @@ html, body {
 #app {
 	height: 100%;
 }
+
+
+
+ /* TRTR styles below */
+
+ .block {
+	 max-width: 600px;
+
+	 background-color: lightblue;
+ }
+ .row {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	max-height:1200px;
+
+}
+
+.column {
+	flex: 50%;
+	max-width: 50%;
+	padding-left: 4px;
+}
+
+@media only screen and (min-width: 720px) {
+
+.row {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	max-height:800px;
+
+
+}
+.column {
+	flex: 33.3%;
+	max-width: 33.3%;
+	padding-left: 4px;
+}
+	
+  }

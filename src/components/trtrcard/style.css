@@ -7,6 +7,30 @@
 }
 
 .card {
-    width: 200px;
-    background-color: lightblue
+    width: 165px;
+    height: 380px;
+    margin: 10px 0px 10px 0px;
 }
+
+.textBox {
+    height: 155px;
+    overflow: hidden;
+}
+
+.cardTitle {
+    padding: 0px;
+    margin: 3px 0px 0px 0px;
+    min-height: 39px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.link {
+    align-items: flex-end;
+}
+
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+

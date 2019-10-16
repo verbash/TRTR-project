@@ -1,5 +1,5 @@
 import { h, render, Component } from 'preact';
-import style from '../style';
+import style from './style';
 import Trtrcard from './trtrcard';
 import trtrdata from '../assets/trtrdata.json';
 
@@ -49,10 +49,18 @@ class App extends Component {
 			// pair random_value and card_id arrays
 			// iterate over array of object pairs and render each card
 		//B. put images json object in state, use .sort
-		//C. use Fisher-Yates shuffle func from stack overflow
+		//C. use Fisher-Yates shuffle function from stack overflow
+		trtrdata = this.state.trtrdata
+		shuffle = (array) => {
+			let	randomArray = array.sort(() => Math.random() - 0.5);
 
 	// loop to render only first 6 cards
 
+			let randomShortArray = randomArray.splice(0,6);
+			return randomShortArray;
+		  }
+	
+		
 	// set up #logged-in state
 
 	// build "Start Reading" link and point to Url
@@ -66,26 +74,25 @@ class App extends Component {
 
 
 
-	render() {
-		return (
-			<div>
-				<p>stuff</p>
-				<div class={style.row}>
-					<Trtrcard />
-					{this.state.trtrdata.map(nextCard => (
-						<Trtrcard
-							id={nextCard.id}
-							title={nextCard.title}
-							description={nextCard.description}
-							image={nextCard.image}
-							product_url={nextCard.product_url}
-						/>
-					))}
+		render() {
+			return (
+				// this is the whole TRTR block being rendered
+				<div className={style.block}>
+					<div className={style.row}>
+						{this.shuffle(this.state.trtrdata).map(nextCard => (
+							<Trtrcard className={style.column}
+								id={nextCard.id}
+								title={nextCard.title}
+								description={nextCard.description}
+								image={nextCard.image}
+								productUrl={nextCard.product_url}
+							/>
+						))}
+					</div>
+						
 				</div>
-				
-			</div>
-		);
-	}
+			);
+		}
 
 }
 
