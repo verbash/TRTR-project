@@ -1,0 +1,17 @@
+.linkHolder {
+    text-align: center;
+}
+.link {
+    align-items: flex-end;
+    display: inline-block;
+    font-size: 14px;
+}
+.linkArrow {
+    font-size: 9px;
+    vertical-align: center;
+}
+
+a {
+    color: #5892d6;
+    text-decoration: none;
+}

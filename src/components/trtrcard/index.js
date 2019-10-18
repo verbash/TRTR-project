@@ -1,8 +1,9 @@
-import { h, render, Component } from 'preact';
+import { h } from 'preact';
 import style from './style';
+import LinkLogged from '../linklogged';
 
 
-function Trtrcard ({ id,title,description,image,productUrl }) {
+function Trtrcard ({ id,title,description,image,productUrl,loggedin }) {
 	return (
 		<div class={style.card}>
 			
@@ -12,11 +13,7 @@ function Trtrcard ({ id,title,description,image,productUrl }) {
 				<span className={style.textContent}>{description}
 				</span>
 			</div>
-			<div className={style.linkHolder}>
-				<a href={productUrl} className={style.link}>Start Reading
-					<span className={style.linkArrow}>  >></span>
-				</a>
-			</div>
+			<LinkLogged isLoggedIn={loggedin} productUrl={productUrl} />
 		</div>
 	);
 }
