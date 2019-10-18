@@ -1,6 +1,6 @@
 {
-  "name": "preact-first-project",
-  "short_name": "preact-first-project",
+  "name": "Top-Rated Tarot Readings",
+  "short_name": "TRTR",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

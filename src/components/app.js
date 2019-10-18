@@ -1,56 +1,25 @@
 import { h, Component } from 'preact';
 import style from './style';
 import Trtrcard from './trtrcard';
+
+//TRTR data served from json
 import trtrdata from '../assets/trtrdata.json';
 
 class App extends Component {
 
-//~UPDATE TOP-RATED TAROT READINGS block, making it dynamic and responsive (remove in production)
-
-	//~Randomly display 6 TRTR of 11 total cards	√
-	//~TRTR data { title, description, image_url, product_url }	√
-	
-	//~Use CSS
-	//~Style the text and images as shown in the attached mocks
-	//~Display the products in 2 Rows/ 3 Columns on Desktop and Tablet √
-	//~Display the products in 3 Rows/ 2 Columns on Mobile	√
-	
-	//~The TRTR should show the "Start Reading" links ONLY when user is logged in
-	//~For this exercise, passing the #logged-in has to the page simulated logged-in user
-	//~The "Start Reading" anchor is pointed to the corresponding product url	√
-
-	//~Bonus: Loading TRTR data from an external source (i.e.: ajax, fetch, Redux state, Redux Saga, etc)
-	//~Being mindful about WHICH html elements to use (should help keep CSS simple) √
-	//~HTML, CSS, Javascript passes Lint (using default rules for each linter)	√
-
-	// BEGIN PSUEDOCODE ************************
-
 	// Global state for our App ->> change 'loggedin: true/false' here
+
 	state = {
 		trtrdata,
 		loggedin: true
-
 	}
-	// what will be in state? : trtrdata, loggedin, ?
 
-	// Create Card Template for 1st Card - create Trtrcard component
-		//importing from trtrdata.json
-		// linking to external url
+		//put images json object in state
 
-
-
-	// build JSON file to map values to each rendered card (for easier updates)
-
-	// test basic functionality by loop rendering Trtrcard component for first 6 in JSON
-
-	// setup randomizer for cards - (choose method)
-		//A. build array of randomized values
-		// build array of card ids
-		// pair random_value and card_id arrays
-		// iterate over array of object pairs and render each card
-		//B. put images json object in state, use .sort √
-		//C. use Fisher-Yates shuffle function from stack overflow
 		trtrdata = this.state.trtrdata
+
+		//use .sort to randomize
+
 		shuffle = (array) => {
 			let	randomArray = array.sort(() => Math.random() - 0.5);
 
@@ -59,24 +28,14 @@ class App extends Component {
 			let randomShortArray = randomArray.splice(0,6);
 			return randomShortArray;
 		  }
-	
-		
-	// set up #logged-in state
-
-	// build "Start Reading" link and point to Url
-
-	// create CSS @media to render in 3 col for web/tablet or 2 col for mobile
-
-	// Style Css to match example
-
-	// bonus: fetch JSON file from external source?
-
-
-
 
 		render() {
 			return (
+
 				// this is the whole TRTR block being rendered
+				//  - each card from Trtrcard component
+				// pass ProductUrl and logged in through props
+
 				<div className={style.block}>
 					<div className={style.row}>
 						{this.shuffle(this.state.trtrdata).map(nextCard => (
@@ -97,9 +56,6 @@ class App extends Component {
 
 }
 
-// ***** CHALLENGES
-// rendering images from links
-// render(<App />, document.body); vs export default; ?what is the difference?
-
+// could also  - render(<App />, document.body)
 
 export default App;
