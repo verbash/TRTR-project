@@ -1,36 +1,48 @@
-.hi {
-    color: blue;
-    font-size: 100px;
-    text-align: center;
-
-
-}
 
 .card {
     width: 165px;
-    height: 380px;
-    margin: 10px 0px 10px 0px;
+    height: 300px;
+    margin: 10px 0px 20px 0px;
 }
 
 .textBox {
-    height: 155px;
+    height: 85px;
     overflow: hidden;
+}
+
+.textBox, header {
+    text-align: center;
+}
+
+.textContent {
+    display: inline-block;
+    font-size: 12px;
+    line-height:1.8
 }
 
 .cardTitle {
     padding: 0px;
-    margin: 3px 0px 0px 0px;
-    min-height: 39px;
+    margin: 2px 0px 0px 0px;
+    min-height: 32px;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 12px;
 }
-
+.linkHolder {
+    text-align: center;
+}
 .link {
     align-items: flex-end;
+    display: inline-block;
+    font-size: 14px;
+}
+.linkArrow {
+    font-size: 9px;
+    vertical-align: center;
 }
 
 a {
-    color: #0060B6;
+    color: #5892d6;
     text-decoration: none;
 }
+
 

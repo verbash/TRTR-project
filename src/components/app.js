@@ -7,13 +7,13 @@ class App extends Component {
 
 //~UPDATE TOP-RATED TAROT READINGS block, making it dynamic and responsive (remove in production)
 
-	//~Randomly display 6 TRTR of 11 total cards
-	//~TRTR data { title, description, image_url, product_url }
+	//~Randomly display 6 TRTR of 11 total cards	√
+	//~TRTR data { title, description, image_url, product_url }	√
 	
 	//~Use CSS
 	//~Style the text and images as shown in the attached mocks
-	//~Display the products in 2 Rows/ 3 Columns on Desktop and Tablet
-	//~Display the products in 3 Rows/ 2 Columns on Mobile
+	//~Display the products in 2 Rows/ 3 Columns on Desktop and Tablet √
+	//~Display the products in 3 Rows/ 2 Columns on Mobile	√
 	
 	//~The TRTR should show the "Start Reading" links ONLY when user is logged in
 	//~For this exercise, passing the #logged-in has to the page simulated logged-in user
@@ -21,7 +21,7 @@ class App extends Component {
 
 	//~Bonus: Loading TRTR data from an external source (i.e.: ajax, fetch, Redux state, Redux Saga, etc)
 	//~Being mindful about WHICH html elements to use (should help keep CSS simple)
-	//~HTML, CSS, Javascript passes Lint (using default rules for each linter)
+	//~HTML, CSS, Javascript passes Lint (using default rules for each linter)	√
 
 	// BEGIN PSUEDOCODE ************************
 
@@ -31,7 +31,7 @@ class App extends Component {
 		loggedin: false
 
 	}
-	// what will be in state? : trtrdata, loggedin, mobile?
+	// what will be in state? : trtrdata, loggedin, ?
 
 	// Create Card Template for 1st Card - create Trtrcard component
 		//importing from trtrdata.json
@@ -63,6 +63,7 @@ class App extends Component {
 		
 	// set up #logged-in state
 
+	
 	// build "Start Reading" link and point to Url
 
 	// create CSS @media to render in 3 col for web/tablet or 2 col for mobile

@@ -28,7 +28,7 @@ html, body {
  .block {
 	 max-width: 600px;
 
-	 background-color: lightblue;
+	 background-color: #ffffff;
  }
  .row {
 	display: flex;

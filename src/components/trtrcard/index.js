@@ -7,11 +7,18 @@ function Trtrcard ({ id,title,description,image,productUrl }) {
 		<div class={style.card}>
 			
 			<img src={image} alt={title} />
-			<h4 className={style.cardTitle}>{title}</h4>
-			<div className={style.textBox}>{description}</div>
-			<a href={productUrl} className={style.link}>Start Reading >></a>
+			<header><h6 className={style.cardTitle}>{title}</h6></header>
+			<div className={style.textBox}>
+				<span className={style.textContent}>{description}
+				</span>
+			</div>
+			<div className={style.linkHolder}>
+				<a href={productUrl} className={style.link}>Start Reading
+					<span className={style.linkArrow}>  >></span>
+				</a>
+			</div>
 		</div>
-	)
+	);
 }
 
 export default Trtrcard;
