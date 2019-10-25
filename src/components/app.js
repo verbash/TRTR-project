@@ -1,6 +1,10 @@
 import { h, Component } from 'preact';
 import style from './style';
-import Trtrcard from './trtrcard';
+import Trtrblock from './trtrblock';
+
+
+import Router from 'preact-router';
+
 
 //TRTR data served from json
 import trtrdata from '../assets/trtrdata.json';
@@ -10,47 +14,27 @@ class App extends Component {
 	// Global state for our App ->> change 'loggedin: true/false' here
 
 	state = {
-		trtrdata,
-		loggedin: true
+		trtrdata
+		// loggedin: false - moved logged in to Router instead of state
 	}
 
 		//put images json object in state
 
 		trtrdata = this.state.trtrdata
 
-		//use .sort to randomize
-
-		shuffle = (array) => {
-			let	randomArray = array.sort(() => Math.random() - 0.5);
-
-			// loop to render only first 6 cards
-
-			let randomShortArray = randomArray.splice(0,6);
-			return randomShortArray;
-		  }
-
+		// moved Trtrblock to its own component to use preact-router
 		render() {
 			return (
+				<Router>
+					<Trtrblock path="/" isLoggedIn={false}
+						passedState={trtrdata}
+					/>
+					<Trtrblock path="/logged-in" isLoggedIn
+						passedState={trtrdata}
+					/>
 
-				// this is the whole TRTR block being rendered
-				//  - each card from Trtrcard component
-				// pass ProductUrl and logged in through props
+				</Router>
 
-				<div className={style.block}>
-					<div className={style.row}>
-						{this.shuffle(this.state.trtrdata).map(nextCard => (
-							<Trtrcard className={style.column}
-								id={nextCard.id}
-								title={nextCard.title}
-								description={nextCard.description}
-								image={nextCard.image_url}
-								productUrl={nextCard.product_url}
-								loggedin={this.state.loggedin}
-							/>
-						))}
-					</div>
-						
-				</div>
 			);
 		}
 

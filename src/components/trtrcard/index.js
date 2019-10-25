@@ -3,7 +3,7 @@ import style from './style';
 import LinkLogged from '../linklogged';
 
 
-function Trtrcard ({ id,title,description,image,productUrl,loggedin }) {
+function Trtrcard ({ id,title,description,image,productUrl,isLoggedIn }) {
 	return (
 		<div class={style.card}>
 			
@@ -13,7 +13,7 @@ function Trtrcard ({ id,title,description,image,productUrl,loggedin }) {
 				<span className={style.textContent}>{description}
 				</span>
 			</div>
-			<LinkLogged isLoggedIn={loggedin} productUrl={productUrl} />
+			<LinkLogged isLoggedIn={isLoggedIn} productUrl={productUrl} />
 		</div>
 	);
 }
